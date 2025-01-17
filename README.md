@@ -1,32 +1,41 @@
-# Banking Simulation
+# Banking System - REST API
 
-## Project Description
-This project is a simple banking system simulation built using Java, JDBC, and MySQL. It allows users to:
-- Create, view, and manage accounts.
-- Perform transactions like deposits, withdrawals, and transfers.
-- View transaction history.
+A simple banking system application built with **Spring Boot** that provides RESTful APIs for managing users, accounts, and transactions. The project is backed by a **PostgreSql** database and supports basic banking operations like deposits, withdrawals, transfers, and transaction history.
+
+---
 
 ## Features
-- User authentication and account management.
-- Validations for email format and positive transaction amounts.
-- Database integration with PostgreSQL.
 
-## How to Run
-1. Clone the repository.
-2. Set up PostgreSQL and create the `bank.sql` database.
-3. Run the SQL scripts in `schema.sql` to create tables.
-4. Compile and run the Java application using an IDE or the command line.
+- User account management (CRUD operations)
+- Transactions:
+  - Deposits
+  - Withdrawals
+  - Transfers
+- View transaction history for each user
+- REST API with JSON support
+- Database-backed persistence using PostgreSQL and JPA
+
+---
 
 ## Tech Stack
-- **Programming Language**: Java
+
+- **Backend**: Spring Boot (Java)
 - **Database**: PostgreSQL
-- **GUI (Optional)**: JavaFX or Swing
+- **ORM**: Spring Data JPA
+- **API Testing**: Postman
 
-## Future Enhancements
-- Add user authentication.
-- Improve GUI with advanced features.
-- Implement REST APIs for web-based access.
+---
+
+## Prerequisites
+
+1. **Java**: JDK 11 or higher
+2. **Spring Boot**: Version 3.x.x
+3. **PostgreSQL**: Version 8.0 or higher
+4. **Maven**: For building the project
+
+---
+
+Author
+Swapnil Ahire
 
 
-## Authors
-- Swapnil Ahire
