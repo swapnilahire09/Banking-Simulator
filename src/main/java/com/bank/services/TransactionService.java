@@ -52,4 +52,24 @@ public class TransactionService{
 	public List<Transaction> getAllTranaction(int accountNumber){
 		return transactionRepository.findByAccountNumber(accountNumber);
 	}
+	@Transactional
+	public String transfer(int fromAccount,int toAccount,double amount) {
+		User fromUser=userRepository.findById(fromAccount).orElseThrow(()-> new RuntimeException("Sender Account not Found"));
+		User toUser=userRepository.findById(toAccount).orElseThrow(()-> new RuntimeException("Reciver Account not Found"));
+		if(fromUser.getBalance()<amount) {
+			throw new RuntimeException("Insufficient Amount in Account");
+		}
+		fromUser.setBalance(fromUser.getBalance() - amount);
+		userRepository.save(fromUser);
+		toUser.setBalance(toUser.getBalance() - amount);
+		userRepository.save(toUser);
+		Transaction transaction=new Transaction();
+		transaction.setAccountNumber(fromAccount);
+		transaction.setAmount(amount);
+		transaction.setType("Transfer");
+		transactionRepository.save(transaction);
+		
+		return "Transaction Successful!";
+			
+	}
 }

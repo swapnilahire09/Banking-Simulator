@@ -33,5 +33,9 @@ public class TransactionController {
 	public List<Transaction> getTransaction(@PathVariable int accountNumber){
 		return transactionService.getAllTranaction(accountNumber);
 	}
+	@PutMapping("/transfer")
+	public String transfer(@RequestParam int fromAccount, @RequestParam int toAccount, @RequestParam double amount) {
+		return transactionService.transfer(fromAccount, toAccount, amount);
+	}
 	
 }

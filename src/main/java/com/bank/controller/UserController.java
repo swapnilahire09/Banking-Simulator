@@ -24,9 +24,9 @@ public class UserController {
 	@PostMapping
 	public User createUser() {
 		User user=new User();
-		user.setBalance(4500);
-		user.setEmail("swapnil@gmail.com");
-		user.setName("swapnil");
+		user.setBalance(41500);
+		user.setEmail("swapnil2@gmail.com");
+		user.setName("swapnil Ahire");
 		return userService.createUser(user);
 	}
 	
